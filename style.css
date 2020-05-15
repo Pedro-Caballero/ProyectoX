@@ -1,7 +1,7 @@
 html {
     /*Reset para REMS - 62.5% = 10px de 16px*/
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Montserrat', sans-serif;
 }
 
 *,
@@ -173,7 +173,7 @@ div.main-container-images {
 div.main-container-images-fondo {
     display: flex;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #ffffffc2;
     width: 310px;
     height: 150px;
     text-align: center;
@@ -207,7 +207,7 @@ div.main-container-images img {
 div.main-container-images-marco a h5 {
     margin-bottom: 2px;
     color: #b0c364;
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
 div.main-container-images-marco a h3 {
@@ -331,9 +331,113 @@ div button:hover {
 
 /***************** VANE ********************/
 
-* {
-    font-family: "Montserrat", sans-serif;
+
+/* 
+section.mainn {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    column-gap: 3rem;
 }
+
+div.two-columns {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    column-gap: 1.5rem;
+    margin-top: 4%;
+}
+
+div.rightt div.two-columns {
+    margin-top: 10%;
+}
+
+section.mainn img {
+    width: 100%;
+    max-width: 100%;
+}
+
+div.second-containerr {
+    margin-top: -5%;
+}
+
+div.second-containerr p {
+    color: #b0c346;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: start;
+}
+
+div.second-containerr span.green {
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+div.left div.two-columns time {
+    color: #7a7a7a;
+    font-size: 13px;
+    font-weight: bolder;
+    padding: 0;
+    display: block;
+    margin-top: 1%;
+}
+
+div.second-containerr p.gray {
+    color: #7a7a7a;
+    font-size: 16px;
+    margin-top: 10%;
+    font-weight: lighter;
+}
+
+div.rightt div.two-columns span {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+div.rightt div.two-columns time {
+    font-size: 9px;
+    color: #7a7a7a;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 10%;
+    display: block;
+}
+
+div.rightt div.two-columns div.two {
+    margin-top: -6%;
+}
+
+@media screen and (max-width: 768px) {
+    section.mainn {
+        display: grid;
+        grid-template-columns: 100%;
+        margin-top: 45%;
+    }
+    div.second-containerr {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    div.left div.two-columns {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    div.rightt div.two-columns img {
+        width: 90%;
+    }
+    div.rightt div.two-columns time {
+        margin-top: 2%;
+    }
+    div.rightt div.two-columns {
+        margin-top: 4%;
+    }
+    div.left div.two-columns div.one img {
+        width: 40%;
+    }
+} */
+
+
+/* 
+/* /* * { 
+    font-family: "Montserrat", sans-serif;
+} */
 
 section.main {
     display: grid;

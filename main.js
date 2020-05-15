@@ -44,7 +44,7 @@ function api() {
                         <div class="main-container-images-marco ">
                         <a href="#">
                             <h5>THE BEST</h3>
-                            <h3>${receta.taxonomy.name}<br/> ${receta.category.name} </h5>                           
+                            <h3>${receta.taxonomy.name}</h5>                           
                         </a>
                         </div>
                     </div>            
@@ -160,7 +160,7 @@ function api() {
                     ${receta.summary}
                     </p>
                 </div>
-           
+
             `;
             });
             return html; // devuelve todo el HTML creado, este contiene en este momento TODAS mis tarjetas.
@@ -181,8 +181,10 @@ function api() {
         })
         .then(function(array_rece) {
             var html = ""; // inicializa la variable html como una cadena vacía.
+
             array_rece.forEach(function(receta) { // Para cada elemento en la matriz, construí mi tarjeta.
                 // concatenates current card to html variable.
+
                 html += `
                 <div class="two-columns">
                 <div class="one">
@@ -193,7 +195,7 @@ function api() {
                     <time datetime="02-13-2020 ">JULY 11,2018 / ${receta.author.name}</time>
                 </div>
             </div>
-           
+
             `;
             });
             return html; // devuelve todo el HTML creado, este contiene en este momento TODAS mis tarjetas.
@@ -240,7 +242,7 @@ function api() {
 function convertObject(json_result) {
     var rece = []; // inicializar matriz vacía
     for (var name_rece in json_result) { // itera en cada elemento.
-        var valores = json_result[name_rece]; // rellena la variable de la receta, ejemplo json_result ["Amumu"]
+        var valores = json_result[name_rece]; // rellena la variable de la receta, ejemplo json_result
         rece.push(valores); // push valores to array 
     }
 
