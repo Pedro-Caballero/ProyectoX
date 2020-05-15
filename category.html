@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class=" site-header contenedor">
+            <a href="#navegacion">
+                <img src="images/logo.png" alt="">
+            </a>
+            <div class="barra contenedor">
+                <a href="#nav" class="mobile">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <nav id="nav" class="navegacion-principal contenedor">
+                    <a [routerLinkActive]="['active']" [routerLink]="['/home']">Home</a>
+                    <a [routerLinkActive]="['active']" [routerLink]="['/life']">Life&Tips</a>
+                    <a [routerLinkActive]="['active']" [routerLink]="['/en123']">En 1.2.3</a>
+                    <a [routerLinkActive]="['active']" [routerLink]="['/healthy']">Healthy</a>
+                    <a [routerLinkActive]="['active']" [routerLink]="['/postresybebidas']">Postres Y Bebidas</a>
+                    <a [routerLinkActive]="['active']" [routerLink]="['/slowfood']">Slow Food</a>
+                    <a [routerLinkActive]="['active']" href="#" class="cerrar">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="main sep">
+        <div class="left">
+            <div class="two-columns">
+                <div class="first">
+                    <img src="images/imagen1.png">
+                </div>
+                <div class="second-container">
+                    <p>THE BEST</p>
+                    <span class="green">Friend eggs with ham</span>
+                    <time datetime="01-02-2010 ">JULY 11, 2018 / BY JULIA STILES</time>
+                    <p class="gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br/> tristique justo id elit bibendum pharetra non vitae lectus. Mauris<br/> libero felis, dapibus a ultrices sed, commodo vitae odio. Sed<br/> auctor tellus quis arcu tempus.
+                    </p>
+                </div>
+            </div>
+            <div class="two-columns">
+                <div class="first">
+                    <img src="images/imagen2.png">
+                </div>
+                <div class="second-container">
+                    <p>THE BEST</p>
+                    <span class="green">Mushrooms with pork chop</span>
+                    <time datetime="01-02-2010 ">JULY 11, 2018 / BY JULIA STILES</time>
+                    <p class="gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br/> tristique justo id elit bibendum pharetra non vitae lectus. Mauris<br/> libero felis, dapibus a ultrices sed, commodo vitae odio. Sed<br/> auctor tellus quis arcu tempus.
+                    </p>
+                </div>
+            </div>
+            <div class="two-columns">
+                <div class="first">
+                    <img src="images/imagen3.png">
+                </div>
+                <div class="second-container">
+                    <p>THE BEST</p>
+                    <span class="green">Birthday cake with chocolate</span>
+                    <time datetime="01-02-2010 ">JULY 11, 2018 / BY JULIA STILES</time>
+                    <p class="gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br/> tristique justo id elit bibendum pharetra non vitae lectus. Mauris<br/> libero felis, dapibus a ultrices sed, commodo vitae odio. Sed<br/> auctor tellus quis arcu tempus.
+                    </p>
+                </div>
+            </div>
+            <div class="two-columns">
+                <div class="first">
+                    <img src="images/imagen1.png">
+                </div>
+                <div class="second-container">
+                    <p>THE BEST</p>
+                    <span class="green">Friend eggs with ham</span>
+                    <time datetime="01-02-2010 ">JULY 11, 2018 / BY JULIA STILES</time>
+                    <p class="gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br/> tristique justo id elit bibendum pharetra non vitae lectus. Mauris<br/> libero felis, dapibus a ultrices sed, commodo vitae odio. Sed<br/> auctor tellus quis arcu tempus.
+                    </p>
+                </div>
+            </div>
+            <div class="two-columns">
+                <div class="first">
+                    <img src="images/imagen2.png">
+                </div>
+                <div class="second-container">
+                    <p>THE BEST</p>
+                    <span class="green">Mushrooms with pork chop</span>
+                    <time datetime="01-02-2010 ">JULY 11, 2018 / BY JULIA STILES</time>
+                    <p class="gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br/> tristique justo id elit bibendum pharetra non vitae lectus. Mauris<br/> libero felis, dapibus a ultrices sed, commodo vitae odio. Sed<br/> auctor tellus quis arcu tempus.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="two-columns">
+                <div class="one">
+                    <img src="images/imagenc1.png">
+                </div>
+                <div class="two">
+                    <span>Friend eggs with ham</span>
+                    <time datetime="02-13-2020 ">JULY 11,2018 / BY JULIA STILES</time>
+                </div>
+            </div>
+            <div class="two-columns">
+                <div class="one">
+                    <img src="images/imagenc2.png">
+                </div>
+                <div class="two">
+                    <span>Burger with fries</span>
+                    <time datetime="02-13-2020 ">JULY 11,2018 / BY JULIA STILES</time>
+                </div>
+            </div>
+
+            <div class="two-columns">
+                <div class="one">
+                    <img src="images/imagenc3.png">
+                </div>
+                <div class="two">
+                    <span>Avocado & Oisters</span>
+                    <time datetime="02-13-2020 ">JULY 11,2018 / BY JULIA STILES</time>
+                </div>
+            </div>
+
+            <div class="two-columns">
+                <div class="one">
+                    <img src="images/imagenc4.png">
+                </div>
+                <div class="two">
+                    <span>Tortillas prawns</span>
+                    <time datetime="02-13-2020 ">JULY 11,2018 / BY JULIA STILES</time>
+                </div>
+            </div>
+
+            <div class="two-columns">
+                <div class="one">
+                    <img src="images/imagenc5.png">
+                </div>
+                <div class="two">
+                    <span>Burger with fries</span>
+                    <time datetime="02-13-2020 ">JULY 11,2018 / BY JULIA STILES</time>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btnn">01</button>
+            <button class="btnn">02</button>
+            <button class="btnn">03</button>
+        </div>
+    </section>
+
+    <footer class="contenedor">
+        <p>Copyright ©2020</p>
+    </footer>
+</body>
+
+</html>
