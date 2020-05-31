@@ -1,0 +1,334 @@
+----------------------HTML-------------------------- 
+<div class="slider">
+
+      <div id="slider-images0"></div>
+
+      <div id="slider-images1"></div>
+
+      <div id="slider-images2"></div>
+
+      <div id="slider-images3"></div>
+
+      <div id="slider-images4"></div>
+
+      <div id="slider-images5"></div>
+
+</div>
+------------------------JS---------------------------
+//JS SLIDER 
+$(function () {
+  $('.slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500,
+      }
+    }]
+  });
+});
+
+//API SLIDER
+
+fetch('http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=1&type=receta&')
+  .then(response => response.json())
+  .then(object => {
+    array = object.data;
+
+    let carrusel = document.getElementById('slider-images0');
+    carrusel.innerHTML = `
+    <img src="${array[0].image.styles.square_circle}"/>
+    <div class="content-slider">
+    <div class="content-slider-border">
+    <p class="category">${array[0].taxonomy.name}</p>
+    <p class="title">${array[0].title}</p>
+    <p class="uno">${dateString} ${array[0].author.name}</p>
+    </div>
+    </div>`
+
+
+    let carrusel1 = document.getElementById('slider-images1');
+    carrusel1.innerHTML = `
+    <img src="${array[1].image.styles.square_circle}"/>
+    <div class="content-slider">
+    <div class="content-slider-border">
+    <p class="category">${array[1].taxonomy.name}</p>
+    <p class="title">${array[1].title}</p>
+    <p class="uno">${dateString} ${array[1].author.name}</p>
+    </div>
+    </div>`
+
+
+    let carrusel2 = document.getElementById('slider-images2');
+    carrusel2.innerHTML = `
+    <img src="${array[2].image.styles.square_circle}"/>
+    <div class="content-slider">
+    <div class="content-slider-border">
+    <p class="category">${array[2].taxonomy.name}</p>
+    <p class="title">${array[2].title}</p>
+    <p class="uno">${dateString} ${array[2].author.name}</p>
+    </div>
+    </div>`
+
+
+    let carrusel3 = document.getElementById('slider-images3');
+    carrusel3.innerHTML = `
+    <img src="${array[3].image.styles.square_circle}"/>
+    <div class="content-slider">
+    <div class="content-slider-border">
+    <p class="category">${array[3].taxonomy.name}</p>
+    <p class="title">${array[3].title}</p>
+    <p class="uno">${dateString} ${array[3].author.name}</p>
+    </div>
+    </div>`
+
+
+    let carrusel4 = document.getElementById('slider-images4');
+    carrusel4.innerHTML = `
+    <img src="${array[4].image.styles.square_circle}"/>
+    <div class="content-slider">
+    <div class="content-slider-border">
+    <p class="category">${array[4].taxonomy.name}</p>
+    <p class="title">${array[4].title}</p>
+    <p class="uno">${dateString} ${array[4].author.name}</p>
+    </div>
+    </div>`
+
+
+    let carrusel5 = document.getElementById('slider-images5');
+    carrusel5.innerHTML = `
+    <img src="${array[5].image.styles.square_circle}"/>
+    <div class="content-slider">
+    <div class="content-slider-border">
+    <p class="category">${array[5].taxonomy.name}</p>
+    <p class="title">${array[5].title}</p>
+    <p class="uno">${dateString} ${array[5].author.name}</p>
+    </div>
+    </div>`
+  })
+  .catch(error => console.log('Hay un error'))
+
+function ocultar(){
+  document.getElementById('slider-images0').style.display = 'none';
+}
+
+function mostrar(){
+  document.getElementById('slider-images0').style.display = 'block';
+}
+-------------------------------CSS-----------------------------------------------
+/* SLIDER */
+.slider {
+  position: relative;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+
+.slick-slider img {
+  width: 100%;
+  height: 65vh;
+}
+
+.slick-slide {
+  padding: 10px;
+}
+
+.slick-prev {
+  background-color: #b0c346;
+  border: 1px solid #b0c346;
+  color: white;
+  padding: 1%;
+  display: inline-block;
+  left: 0.7%;
+  z-index: 1;
+}
+
+.slick-next {
+  background-color: #b0c346;
+  border: 1px solid #b0c346;
+  color: white;
+  padding: 1%;
+  display: inline-block;
+  right: 0.6%;
+}
+
+.slick-arrow {
+  top: 50%;
+  margin-top: -13px;
+  position: absolute;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .slick-slider img {
+    width: 100%;
+    height: 30vh;
+  }
+
+  .slick-prev {
+    left: 2.5%;
+  }
+
+  .slick-next {
+    right: 2.4%;
+  }
+}
+
+/* SLIDER2 */
+#slider-images0 .content-slider {
+  display: flex;
+  text-align: center;
+  background-color: white;
+  width: 4%;
+  padding: 15px;
+  margin-top: -20.5rem;
+  margin-left: 4rem;
+  position: absolute;
+  opacity: 0.6;
+  display: none;
+}
+
+#slider-images0 .content-slider .content-slider-border {
+  border: 2.5px solid #b0c364;
+  padding-top: 50px;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
+}
+
+#slider-images1 .content-slider {
+  display: flex;
+  text-align: center;
+  background-color: white;
+  width: 4%;
+  padding: 15px;
+  margin-top: -20.5rem;
+  margin-left: 4rem;
+  position: absolute;
+  opacity: 0.6;
+}
+
+#slider-images1 .content-slider .content-slider-border {
+  border: 2.5px solid #b0c364;
+  padding-top: 50px;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
+}
+
+#slider-images2 .content-slider {
+  display: flex;
+  text-align: center;
+  background-color: white;
+  width: 4%;
+  padding: 15px;
+  margin-top: -20.5rem;
+  margin-left: 4rem;
+  position: absolute;
+  opacity: 0.6;
+  display: none;
+}
+
+#slider-images2 .content-slider .content-slider-border {
+  border: 2.5px solid #b0c364;
+  padding-top: 50px;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
+}
+
+#slider-images3 .content-slider {
+  display: flex;
+  text-align: center;
+  background-color: white;
+  width: 4%;
+  padding: 15px;
+  margin-top: -20.5rem;
+  margin-left: 4rem;
+  position: absolute;
+  opacity: 0.6;
+  display: none;
+}
+
+#slider-images3 .content-slider .content-slider-border {
+  border: 2.5px solid #b0c364;
+  padding-top: 50px;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
+}
+
+#slider-images4 .content-slider {
+  display: flex;
+  text-align: center;
+  background-color: white;
+  width: 4%;
+  padding: 15px;
+  margin-top: -20.5rem;
+  margin-left: 4rem;
+  position: absolute;
+  opacity: 0.6;
+}
+
+#slider-images4 .content-slider .content-slider-border {
+  border: 2.5px solid #b0c364;
+  padding-top: 50px;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
+}
+
+#slider-images5 .content-slider {
+  display: flex;
+  text-align: center;
+  background-color: white;
+  width: 4%;
+  padding: 15px;
+  margin-top: -20.5rem;
+  margin-left: 4rem;
+  position: absolute;
+  opacity: 0.6;
+  display: none;
+}
+
+#slider-images5 .content-slider .content-slider-border {
+  border: 2.5px solid #b0c364;
+  padding-top: 50px;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
+}
+
+.category {
+  color: #b0c346;
+  font-size: 17px;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+.uno {
+  color: #7a7a7a;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+ @media screen and (max-width: 768px){
+  #slider-images0 .content-slider{display: block;}
+  #slider-images1 .content-slider{display: block;}
+  #slider-images2 .content-slider{display: block;}
+  #slider-images3 .content-slider{display: block;}
+  #slider-images4 .content-slider{display: block;}
+  #slider-images5 .content-slider{display: block;}
+}

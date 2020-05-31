@@ -1,0 +1,15 @@
+Life&tips id=15
+En123 id=1
+Healthy id=13
+Postres y bebidas id=14
+Slow Food id= 11
+
+---------CARRUSEL-----------
+http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=1&type=receta
+---------HEALTHY------------
+http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=13&fields=title,taxonomy.name,image.url&type=receta&limit=3
+----------BIG CARDS---------
+http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=13&fields=summary,taxonomy.name,author.name,title,image.url,created&type=receta&limit=2&offset=6
+----------NICE TO HAVE-------
+http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=13&fields=id,taxonomy.name,preference.name,summary,author.name,title,image,url,category.name&type=receta&limit=1&offset=7
+

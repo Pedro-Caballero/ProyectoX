@@ -1,7 +1,6 @@
 function api() {
     // Carrusel
-
-    fetch("http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=13&type=receta")
+    fetch("http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=13&type=receta&fields=id,taxonomy.name,created,author.name,image.url,preference.name,title,url,category.name")
 
     .then(function(response) {
             return response.json()
@@ -13,20 +12,134 @@ function api() {
             let element4 = document.getElementById('img4')
             let element5 = document.getElementById('img5')
             let element6 = document.getElementById('img6')
-            element.innerHTML = `<img src="${jsondata.data[0].image.url}"/>`
-            element2.innerHTML = `<img src="${jsondata.data[1].image.url}"/>`
-            element3.innerHTML = `<img src="${jsondata.data[2].image.url}"/>`
-            element4.innerHTML = `<img src="${jsondata.data[3].image.url}"/>`
-            element5.innerHTML = `<img src="${jsondata.data[4].image.url}"/>`
-            element6.innerHTML = `<img src="${jsondata.data[5].image.url}"/>`
-                // document.getElementById("img1").innerHTML = '<img src="' + api.data[0].image.url + '" alt="/>';
-            console.log(jsondata.data[0].author.name);
+            let time = 0;
+            date = new Date(time * 1000);
+            dateString = date.toLocaleDateString();
+            element.innerHTML = `
+           <div class="main-container-card ">
+            <img src="${jsondata.data[0].image.url}"/>
+            <div class="main-container-images-fondo-carr ">
+                        <div class="main-container-images-marco-carr ">
+                        <a href="#">
+                            <h5>${jsondata.data[0].taxonomy.name}</h5>
+                            <h3>${jsondata.data[0].title}</h3>   
+                            <h4>${dateString} ${jsondata.data[0].author.name}</h4>                        
+                        </a>
+                        </div>
+                </div> 
+           </div>
+            `
+            element2.innerHTML = `
+            <div class="main-container-card ">
+             <img src="${jsondata.data[1].image.url}"/>
+             <div class="main-container-images-fondo-carr ">
+                         <div class="main-container-images-marco-carr ">
+                         <a href="#">
+                             <h5>${jsondata.data[1].taxonomy.name}</h5>
+                             <h3>${jsondata.data[1].title}</h3>   
+                             <h4>${dateString} ${jsondata.data[1].author.name}</h4>                        
+                         </a>
+                         </div>
+                 </div> 
+            </div>
+             `
+            element3.innerHTML = `
+            <div class="main-container-card ">
+             <img src="${jsondata.data[2].image.url}"/>
+             <div class="main-container-images-fondo-carr ">
+                         <div class="main-container-images-marco-carr ">
+                         <a href="#">
+                             <h5>${jsondata.data[2].taxonomy.name}</h5>
+                             <h3>${jsondata.data[2].title}</h3>  
+                             <h4>${dateString} ${jsondata.data[2].author.name}</h4>                         
+                         </a>
+                         </div>
+                 </div> 
+            </div>
+             `
+            element4.innerHTML = `
+            <div class="main-container-card ">
+             <img src="${jsondata.data[3].image.url}"/>
+             <div class="main-container-images-fondo-carr ">
+                         <div class="main-container-images-marco-carr ">
+                         <a href="#">
+                             <h5>${jsondata.data[3].taxonomy.name}</h5>
+                             <h3>${jsondata.data[3].title}</h3>   
+                             <h4>${dateString} ${jsondata.data[3].author.name}</h4>                        
+                         </a>
+                         </div>
+                 </div> 
+            </div>
+             `
+            element5.innerHTML = `
+            <div class="main-container-card ">
+             <img src="${jsondata.data[4].image.url}"/>
+             <div class="main-container-images-fondo-carr ">
+                         <div class="main-container-images-marco-carr ">
+                         <a href="#">
+                             <h5>${jsondata.data[4].taxonomy.name}</h5>
+                             <h3>${jsondata.data[4].title}</h3>       
+                             <h4>${dateString} ${jsondata.data[4].author.name}</h4>                    
+                         </a>
+                         </div>
+                 </div> 
+            </div>
+             `
+            element6.innerHTML = `
+            <div class="main-container-card ">
+             <img src="${jsondata.data[5].image.url}"/>
+             <div class="main-container-images-fondo-carr ">
+                         <div class="main-container-images-marco-carr ">
+                         <a href="#">
+                             <h5>${jsondata.data[5].taxonomy.name}</h5>
+                             <h3>${jsondata.data[5].title}</h3> 
+                             <h4>${dateString} ${jsondata.data[5].author.name}</h4>                          
+                         </a>
+                         </div>
+                 </div> 
+            </div>
+             `
+            $(document).ready(function() {
+                $('.slider-carrusel').slick({
+                    // centerPadding: '6px',
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2500,
+                    prevArrow: '<button class="slick-prev" arial-label="Previous" style="width:7rem"  type="button">Prev</button>',
+                    nextArrow: '<button class="slick-next" arial-label="Next" style="width:7rem" type="button">Next</button>',
+                    responsive: [{
+                            breakpoint: 768,
+                            settings: {
+                                arrows: false,
+                                centerMode: true,
+                                centerPadding: '4px',
+                                slidesToShow: 3,
+                                prevArrow: '<button class="slick-prev" arial-label="Previous" style="width:7rem"  type="button">Prev</button>',
+                                nextArrow: '<button class="slick-next" arial-label="Next" style="width:7rem" type="button">Next</button>',
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                arrows: false,
+                                centerMode: true,
+                                centerPadding: '5px',
+                                slidesToShow: 1,
+                                prevArrow: '<button class="slick-prev" arial-label="Previous" style="width:7rem"  type="button">Prev</button>',
+                                nextArrow: '<button class="slick-next" arial-label="Next" style="width:7rem" type="button">Next</button>',
+                            }
+                        }
+                    ]
+                });
+            });
         })
+        .catch(error => console.log('Hay un error'))
 
     // Fin Carrusel
     // Fetch 3 CARDS ********************/
     var content2 = document.getElementById('uno');
-    fetch("http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?fields=id,taxonomy.name,preference.name,title,image,url,category.name&sort=visits:DESC&type=receta&limit=3")
+    fetch("http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=13&fields=id,taxonomy.name,image.url,preference.name,title,url,category.name&sort=visits:DESC&type=receta&limit=3")
         .then(function(response) { // Primera promesa, convierte la respuesta a json, devuelve json.
             return response.json()
         })
@@ -43,8 +156,8 @@ function api() {
                     <div class="main-container-images-fondo ">
                         <div class="main-container-images-marco ">
                         <a href="#">
-                            <h5>THE BEST</h3>
-                            <h3>${receta.taxonomy.name}</h5>                           
+                            <h5>${receta.taxonomy.name}</h3>
+                            <h3>${receta.title}</h5>                           
                         </a>
                         </div>
                     </div>            
@@ -56,6 +169,7 @@ function api() {
         .then(function(html) { // recibir html e inyectar en mi div
             content2.innerHTML = html;
         })
+        .catch(error => console.log('Hay un error'))
 
     // ************ Fetch Dos Cards *************
     var content5 = document.getElementById('card2');
@@ -70,6 +184,9 @@ function api() {
         })
         .then(function(array_rece) {
             var html = ""; // inicializa la variable html como una cadena vacía.
+            let time = 0;
+            date = new Date(time * 1000);
+            dateString = date.toLocaleDateString();
             array_rece.forEach(function(receta) { // Para cada elemento en la matriz, construí mi tarjeta.
                 // concatenates current card to html variable.
                 html += `
@@ -79,13 +196,17 @@ function api() {
                     <div class="texto-entrada ">
                         <h4>${receta.taxonomy.name}</h4>
                         <h2>${receta.title}</h2>
-                        <time datetime="2020-02-25 09:04 ">March 3,2020 / ${receta.author.name}</time>
+                        <time class="time" datetime="2020-02-25 09:04 ">${dateString} / ${receta.author.name}</time>
                         <p>
                         ${receta.summary} 
                        
                         </p>
-                        <div class="card-horizontal-button ">
-                            <a href="# "><button>Read More</button></a>
+                        <div class="card-horizontal-button">
+                            <button>
+                                <a href="#">
+                                Read More
+                                </a>
+                            </button>                          
                         </div>
                      </div>
                 `;
@@ -95,6 +216,7 @@ function api() {
         .then(function(html) { // recibir html e inyectar en mi div
             content5.innerHTML = html;
         })
+        .catch(error => console.log('Hay un error'))
 
     fetch("http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=13&fields=id,taxonomy.name,preference.name,summary,author.name,title,image,url,category.name&type=receta&limit=1&offset=7")
         .then(function(response) { // Primera promesa, convierte la respuesta a json, devuelve json.
@@ -113,17 +235,22 @@ function api() {
                     <div class="texto-entrada">
                         <h4>${receta.taxonomy.name}</h4>
                         <h2>${receta.title}</h2>
-                        <time datetime="2020-02-25 09:04 ">March 3,2020 / ${receta.author.name}</time>
+                        <time class="time"  datetime="2020-02-25 09:04 ">${dateString} / ${receta.author.name}</time>
                         <p>
                         ${receta.summary}                      
                         </p>
-                        <div class="card-horizontal-button ">
-                            <a href="#"><button>Read More</button></a>
+                            <div class="card-horizontal-button ">
+                                <button>
+                                <a href="#">
+                                    Read More
+                                </a>
+                                </button>                          
+                            </div>
+                    </div>
+                        <div class="imagen ">
+                            <img src="${receta.image.url}" alt=" ">
                         </div>
-                    </div>
-                    <div class="imagen ">
-                        <img src="${receta.image.url}" alt=" ">
-                    </div>
+                
 `;
             });
             return html; // devuelve todo el HTML creado, este contiene en este momento TODAS mis tarjetas.
@@ -131,80 +258,10 @@ function api() {
         .then(function(html) { // recibir html e inyectar en mi div
             content6.innerHTML = html;
         })
+        .catch(error => console.log('Hay un error'))
         //  ************** FIN *******************
 
-    // cards Vane
 
-    var content7 = document.getElementById('card4');
-
-    fetch("http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?taxonomy.tid=13&fields=id,summary,taxonomy.name,preference.name,ingredients,author.name,title,image,url,category.name&type=receta&limit=3&offset=8")
-        .then(function(response) { // Primera promesa, convierte la respuesta a json, devuelve json.
-            return response.json()
-        })
-        .then(function(json) { // recibir json como variable "json"
-            return convertObject(json.data); //Decidí convertir primero el objeto en matriz. Ver función a continuación.
-        })
-        .then(function(array_rece) {
-            var html = ""; // inicializa la variable html como una cadena vacía.
-            array_rece.forEach(function(receta) { // Para cada elemento en la matriz, construí mi tarjeta.
-                // concatenates current card to html variable.
-                html += `
-            <div class="first">
-            <img src="${receta.image.url}">
-            </div>
-                <div class="second-container">
-                    <h3>${receta.taxonomy.name}</h3>
-                    <h1 class="green">${receta.title}</h1>
-                    <time datetime="01-02-2010 ">JULY 11, 2018 / ${receta.author.name}</time>
-                    <p class="gray">
-                    ${receta.summary}
-                    </p>
-                </div>
-
-            `;
-            });
-            return html; // devuelve todo el HTML creado, este contiene en este momento TODAS mis tarjetas.
-        })
-        .then(function(html) { // recibir html e inyectar en mi div
-            content7.innerHTML = html;
-        })
-
-    // Sgunda seccion card's pequeñas
-    var content8 = document.getElementById('card5');
-
-    fetch("http://api.imagendigital.com/v2/cocinadelirante/node.json/339fd1e0444ddbbd4d4528d8df161108?fields=id,image.styles.square_circle,taxonomy.name,author.name,title,category.name&sort=visits:DESC&type=receta&limit=5")
-        .then(function(response) { // Primera promesa, convierte la respuesta a json, devuelve json.
-            return response.json()
-        })
-        .then(function(json) { // recibir json como variable "json"
-            return convertObject(json.data); //Decidí convertir primero el objeto en matriz. Ver función a continuación.
-        })
-        .then(function(array_rece) {
-            var html = ""; // inicializa la variable html como una cadena vacía.
-
-            array_rece.forEach(function(receta) { // Para cada elemento en la matriz, construí mi tarjeta.
-                // concatenates current card to html variable.
-
-                html += `
-                <div class="two-columns">
-                <div class="one">
-                   <img  src="${receta.image.styles.square_circle}"/>
-                </div>
-                <div class="two">
-                    <h5>${receta.title}</h5>
-                    <time datetime="02-13-2020 ">JULY 11,2018 / ${receta.author.name}</time>
-                </div>
-            </div>
-
-            `;
-            });
-            return html; // devuelve todo el HTML creado, este contiene en este momento TODAS mis tarjetas.
-        })
-        .then(function(html) { // recibir html e inyectar en mi div
-            content8.innerHTML = html;
-        })
-
-    // ****FIN ****
 
     // ********* API seccion final *******************
 
@@ -232,6 +289,7 @@ function api() {
         .then(function(html) { // recibir html e inyectar en mi div
             content9.innerHTML = html;
         })
+        .catch(error => console.log('Hay un error'))
 
     // FIN
 
@@ -248,4 +306,7 @@ function convertObject(json_result) {
 
     return rece; // Matriz de retorno con todos los campos.
 }
+
+
+
 export { api };
